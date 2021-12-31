@@ -28,22 +28,26 @@ import retrofit2.Response;
 
 public class UpdateDataBarangFragement extends Fragment {
 
-    TextInputEditText updateNamaBarang, updateJumlahBarang;
-    TextInputLayout layoutUpdateNamaBarang, layoutUpdateJumlahBarang;
+    TextInputEditText updateNamaBarang, updateJumlahBarang, updatedetail;
+    TextInputLayout layoutUpdateNamaBarang, layoutUpdateJumlahBarang, layoutUpdatedetail;
+
     Button btnUpdateBarang;
-    String kodeBarang, namaBarang, jumlahBarang;
-    TextView hiddenKodeBarang;
+    String kodeBarang, namaBarang, jumlahBarang, detail, title;
+    TextView hiddenKodeBarang, titleresep;
     InterfaceConnection interfaceConnection;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         interfaceConnection = ApiConnection.getClient().create(InterfaceConnection.class);
+         updatedetail= (TextInputEditText)view.findViewById(R.id.updatedetail);
         updateNamaBarang = (TextInputEditText)view.findViewById(R.id.updateNamaBarang);
         updateJumlahBarang = (TextInputEditText)view.findViewById(R.id.updateJumlahBarang);
         layoutUpdateNamaBarang = (TextInputLayout)view.findViewById(R.id.layoutUpdateNamaBarang);
         layoutUpdateJumlahBarang = (TextInputLayout)view.findViewById(R.id.layoutUpdateJumlahBarang);
+        layoutUpdatedetail = (TextInputLayout)view.findViewById(R.id.layoutUpdatedetail);
         hiddenKodeBarang = (TextView)view.findViewById(R.id.hiddenkodeBarang);
+        titleresep = (TextView)view.findViewById(R.id.title_resep);
         btnUpdateBarang = (Button)view.findViewById(R.id.btnUpdateBarang);
 
         try {
@@ -51,6 +55,8 @@ public class UpdateDataBarangFragement extends Fragment {
             kodeBarang = bundle.getString("kdBarang");
             namaBarang = bundle.getString("nmBarang");
             jumlahBarang = bundle.getString("jmlBarang");
+            detail = bundle.getString("detail");
+            title = bundle.getString("title");
         }
         catch(final Exception e){
             // Do nothing
@@ -58,6 +64,8 @@ public class UpdateDataBarangFragement extends Fragment {
 
         updateNamaBarang.setText(namaBarang);
         updateJumlahBarang.setText(jumlahBarang);
+        updatedetail.setText(detail);
+        titleresep.setText(title);
 
         btnUpdateBarang.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Mata Kuliah/Semester 3/Pemprograman Mobile 1/UAS/ResepKu/app/src/main/res/layout/layout_daftar_barang.xml" value="0.19202898550724637" />
+        <entry key="..\:/Mata Kuliah/Semester 3/Pemprograman Mobile 1/UAS/resepku/app/src/main/res/layout/activity_splash_screen.xml" value="0.14583333333333334" />
+        <entry key="..\:/Mata Kuliah/Semester 3/Pemprograman Mobile 1/UAS/resepku/app/src/main/res/layout/fragment_update_barang.xml" value="0.19202898550724637" />
+        <entry key="..\:/Mata Kuliah/Semester 3/Pemprograman Mobile 1/UAS/resepku/app/src/main/res/layout/fragment_update_data_barang.xml" value="0.19202898550724637" />
+        <entry key="..\:/Mata Kuliah/Semester 3/Pemprograman Mobile 1/UAS/resepku/app/src/main/res/layout/layout_daftar_barang.xml" value="0.19202898550724637" />
         <entry key="..\:/mobile1 project/app/src/main/res/drawable-v24/btn_btn_background.xml" value="0.28974358974358977" />
         <entry key="..\:/mobile1 project/app/src/main/res/drawable/btn_btn_background.xml" value="0.28974358974358977" />
         <entry key="..\:/mobile1 project/app/src/main/res/layout/activity_main.xml" value="0.14583333333333334" />
@@ -13,6 +18,9 @@
         <entry key="..\:/mobile1 project/app/src/main/res/layout/fragment_update_data_barang.xml" value="0.135258358662614" />
         <entry key="..\:/mobile1 project/app/src/main/res/layout/layout_daftar_barang.xml" value="0.25" />
         <entry key="..\:/mobile1 project/app/src/main/res/menu/bottom_nav.xml" value="0.14583333333333334" />
+        <entry key="..\:/resepku/app/src/main/res/layout/fragment_dashboard.xml" value="0.18342391304347827" />
+        <entry key="..\:/resepku/app/src/main/res/layout/fragment_update_barang.xml" value="0.18342391304347827" />
+        <entry key="..\:/resepku/app/src/main/res/layout/layout_daftar_barang.xml" value="0.18342391304347827" />
       </map>
     </option>
   </component>

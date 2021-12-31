@@ -24,6 +24,7 @@ import com.example.resepku.rest.InterfaceConnection;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -56,7 +57,10 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.kodeBarang.setText(daftarBarang.get(position).getKode_barang());
+        holder.titleResep.setText(daftarBarang.get(position).getTitle_resep());
         holder.namaBarang.setText(daftarBarang.get(position).getNama_barang());
+        holder.durationResep.setText(daftarBarang.get(position).getDuration_resep());
+
         holder.jumlahBarang.setText(daftarBarang.get(position).getJumlah_barang());
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,11 +76,15 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
                 String kode = daftarBarang.get(position).getKode_barang();
                 String nama = daftarBarang.get(position).getNama_barang();
                 String jumlah = daftarBarang.get(position).getJumlah_barang();
+                String detail = daftarBarang.get(position).getDetail_resep();
+                String title = daftarBarang.get(position).getTitle_resep();
                 Bundle bundle = new Bundle();
 //                bundle.putString("key", "data");
                 bundle.putString("kdBarang", kode);
                 bundle.putString("nmBarang", nama);
                 bundle.putString("jmlBarang", jumlah);
+                bundle.putString("detail", detail);
+                bundle.putString("title", title);
 
                 Fragment fragment = new com.example.resepku.UpdateDataBarangFragement();
                 fragment.setArguments(bundle);
@@ -101,7 +109,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         ConstraintLayout layout_daftar_barang;
-        TextView kodeBarang, namaBarang, jumlahBarang;
+        TextView kodeBarang, namaBarang, jumlahBarang, titleResep, durationResep;
         ImageButton btnDelete, btnEdit;
 
         public ViewHolder(@NonNull View itemView) {
@@ -109,7 +117,9 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
             layout_daftar_barang = (ConstraintLayout)itemView.findViewById(R.id.layout_daftar_barang);
             kodeBarang = (TextView) itemView.findViewById(R.id.textViewKodeBarang);
             namaBarang = (TextView)itemView.findViewById(R.id.textViewNamaBarang);
+            titleResep = (TextView) itemView.findViewById(R.id.textViewtitle) ;
             jumlahBarang = (TextView)itemView.findViewById(R.id.textViewJumlahBarang);
+            durationResep = (TextView)itemView.findViewById(R.id.textviewduration);
             btnDelete = (ImageButton)itemView.findViewById(R.id.imgBtnDeleteBarang);
             btnEdit = (ImageButton)itemView.findViewById(R.id.imgBtnEditBarang);
         }

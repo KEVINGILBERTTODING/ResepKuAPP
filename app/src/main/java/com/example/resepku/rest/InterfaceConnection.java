@@ -24,7 +24,7 @@ public interface InterfaceConnection {
     );
 
     @DELETE("barang/delete/{kode_barang}")
-    Call<Data_Response> hapus_barang(@Path("kode_barang") String id
+    Call<Data_Response> hapus_barang(@Path("id") String id
     );
 
 //    @Headers({"Content-Type: application/json"})

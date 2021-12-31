@@ -14,7 +14,7 @@ public class SplashScreen extends AppCompatActivity {
         Thread thread= new Thread(){
             public void run(){
                 try {
-                        sleep(3000);    //panjang waktu munculnya splash screen
+                        sleep(4000);    //panjang waktu munculnya splash screen
                                             // dalam milisecond sebelum melakukan intent ke halaman MainActivity
                 } catch (InterruptedException e){
                     e.printStackTrace();

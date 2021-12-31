@@ -30,9 +30,35 @@
             android:orientation="vertical"
 
             >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                >
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/textviewduration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="duration"
+                    />
+            </LinearLayout>
             <TextView
+                android:visibility="gone"
                 android:layout_marginTop="10dp"
                 android:id="@+id/textViewKodeBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Resep"
+                android:textColor="@color/splashScreen"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/textViewtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -44,20 +70,13 @@
                 android:id="@+id/textViewNamaBarang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-
                 android:text="Teh Pucuk"
                 android:textSize="14sp" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="ingredient :"
-            android:textSize="16dp" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/textViewJumlahBarang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,6 +96,7 @@
             >
 
             <ImageButton
+                android:visibility="gone"
                 android:id="@+id/imgBtnDeleteBarang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,6 +117,7 @@
                 android:layout_below="@+id/imgBtnDeleteBarang"
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="16dp"
                 android:adjustViewBounds="true"
                 android:background="@null"
