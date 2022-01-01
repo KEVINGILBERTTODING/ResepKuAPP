@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/splashScreen"
+    android:orientation="vertical"
     tools:context=".SplashScreen">
 
     <ImageView
+        android:layout_gravity="center_horizontal"
         android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginBottom="150dp"
-        android:src="@drawable/ikon_kasir_fix"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="220dp"
+        android:src="@drawable/mainlogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,11 +23,60 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="KasirKu"
-        android:textColor="@color/splashScreen"
-        android:textSize="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:text="ResepKu"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        android:fontFamily="@font/sfblack"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No one is conceived an awesome cook,"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textSize="9sp"
+        android:fontFamily="@font/sflight"
+
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="one learns by doing."
+        android:textColor="@color/white"
+        android:textSize="9sp"
+        android:fontFamily="@font/sflight"
+        android:layout_gravity="center_horizontal"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PPKM GROUP"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="260dp"
+        android:textSize="9sp"
+        android:fontFamily="@font/sfreg"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version 1.1.1"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/sflight"
+        android:textSize="7sp"
+        />
+
+
+
+
+</LinearLayout>

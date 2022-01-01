@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp"
+    tools:context=".firstActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+
+        android:src="@drawable/logo2" />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No one is conceived an awesome cook,"
+        android:fontFamily="@font/sfmed"
+        android:textSize="11sp"
+        />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/sfmed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="one learns by doing."
+        android:textSize="11sp"
+        />
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/sfbold"
+        android:textSize="50sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="It's\nCooking\nTime!"
+        />
+
+    <Button
+        android:textSize="11sp"
+        android:id="@+id/btnStarted"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_container"
+        android:text="Get Started"
+        android:padding="10dp"
+        />
+
+</LinearLayout>
