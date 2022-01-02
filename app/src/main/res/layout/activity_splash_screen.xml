@@ -24,9 +24,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ResepKu"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textSize="24sp"
-        android:fontFamily="@font/sfblack"
+        android:fontFamily="@font/gogabold"
         android:textColor="@color/white"
         android:layout_gravity="center"
 
@@ -40,7 +40,7 @@
         android:textColor="@color/white"
         android:layout_gravity="center"
         android:textSize="9sp"
-        android:fontFamily="@font/sflight"
+        android:fontFamily="@font/gogareg"
 
         />
 
@@ -51,7 +51,7 @@
         android:text="one learns by doing."
         android:textColor="@color/white"
         android:textSize="9sp"
-        android:fontFamily="@font/sflight"
+        android:fontFamily="@font/gogareg"
         android:layout_gravity="center_horizontal"
         />
     <TextView
@@ -60,20 +60,21 @@
         android:text="PPKM GROUP"
         android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="260dp"
-        android:textSize="9sp"
-        android:fontFamily="@font/sfreg"
+        android:layout_marginTop="290dp"
+        android:textSize="10sp"
+        android:fontFamily="@font/gogareg"
 
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:text="Version 1.1.1"
         android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/sflight"
-        android:textSize="7sp"
+        android:fontFamily="@font/gogareg"
+        android:textSize="8sp"
         />
 
 
