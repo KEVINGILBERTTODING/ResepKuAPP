@@ -60,8 +60,8 @@
         android:text="PPKM GROUP"
         android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="290dp"
-        android:textSize="10sp"
+        android:layout_marginTop="300dp"
+        android:textSize="9sp"
         android:fontFamily="@font/gogareg"
 
         />
