@@ -17,14 +17,18 @@
             android:exported="true" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/AppTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".firstActivity" />
+        <activity android:name=".firstActivity"
+            android:theme="@style/AppTheme"
+            />
     </application>
 
 </manifest>
