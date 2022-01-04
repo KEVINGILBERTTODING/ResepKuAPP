@@ -1,12 +1,15 @@
 package com.example.resepku;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
-
+import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -28,17 +31,28 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DashBoardFragment extends Fragment {
+    ImageButton btnBack;
     ArrayList<Data_Model> daftarseluruhBarang = new ArrayList<>();
     RecyclerView tabel_barang;
     InterfaceConnection interfaceConnection;
     AdapterDaftarBarang adapterDaftarBarang;
+
+
+
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         tabel_barang = (RecyclerView)view.findViewById(R.id.recyclerView_daftarBarang);
         interfaceConnection = ApiConnection.getClient().create(InterfaceConnection.class);
         loadDataBarang();
+
+
+
     }
+
+
     private void loadDataBarang() {
         adapterDaftarBarang = new AdapterDaftarBarang(getContext());
         Call<Data_Response> daftar_barang = interfaceConnection.daftar_barang();
@@ -64,7 +78,11 @@ public class DashBoardFragment extends Fragment {
                 t.printStackTrace();
                 Log.d("here", "here", t);
                 Toast.makeText(getActivity(), "Terjadi kesalahan", Toast.LENGTH_SHORT).show();
+
+
+
             }
+
         });
         startRecyclerView();
     }
@@ -74,10 +92,13 @@ public class DashBoardFragment extends Fragment {
         tabel_barang.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_dashboard, container, false);
+
+
     }
 }

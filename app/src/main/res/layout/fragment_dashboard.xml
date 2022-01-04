@@ -8,17 +8,77 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="330dp"
-        android:background="@drawable/container_1"
-
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
         >
+
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="-37dp"
+            android:src="@drawable/character"
+
+            />
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_back" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="105dp"
+            android:fontFamily="@font/gogareg"
+            android:text="Hi, Have a great day!"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+
+            />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gogabold"
+            android:text="What would you\nlike to Cook?"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Popular recipes"
+            android:textColor="@color/black"
+            android:layout_below="@+id/text2"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="94dp"
+            android:fontFamily="@font/gogabold"
+            android:textSize="19sp"
+
+            />
+
+
 
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        app:circularflow_radiusInDP="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="320dp"
         android:id="@+id/recyclerView_daftarBarang"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

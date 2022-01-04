@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
     android:id="@+id/layout_daftar_barang">
 
 
 
         <RelativeLayout
-            android:background="@drawable/container_list"
+            android:background="@drawable/listcontainer"
             android:layout_width="wrap_content"
             android:layout_height="140dp"
             android:layout_marginLeft="10dp"
@@ -28,16 +29,15 @@
                 >
 
                 <TextView
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginTop="17dp"
                     android:id="@+id/textviewduration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="20"
-                    android:textSize="12sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
                     android:fontFamily="@font/gogabold"
-                    />
+                    android:text="20"
+                    android:textSize="12sp" />
             </RelativeLayout>
             <TextView
                 android:visibility="gone"
@@ -55,19 +55,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="70dp"
                 android:fontFamily="@font/gogabold"
+                android:maxLength="50"
+                android:maxLines="2"
                 android:text="Resep"
                 android:textColor="@color/white"
-                android:textSize="19sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/textViewNamaBarang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
-                android:text="Teh Pucuk"
+                android:fontFamily="@font/gogabold"
+                android:text="Main Dish"
 
                 android:textColor="@color/white"
                 android:textSize="14sp" />
@@ -113,14 +117,15 @@
                 android:id="@+id/imgBtnEditBarang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imgBtnDeleteBarang"
+
                 android:layout_alignParentRight="true"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginEnd="16dp"
+
                 android:adjustViewBounds="true"
                 android:background="@null"
-                android:src="@drawable/ic_baseline_edit_24" />
+                android:src="@drawable/btn_show1" />
         </RelativeLayout>
 
 
