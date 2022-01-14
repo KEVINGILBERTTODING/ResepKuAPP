@@ -32,8 +32,8 @@ public class UpdateDataBarangFragement extends Fragment {
     TextInputLayout layoutUpdateNamaBarang, layoutUpdateJumlahBarang, layoutUpdatedetail;
 
     Button btnUpdateBarang;
-    String kodeBarang, namaBarang, jumlahBarang, detail, title;
-    TextView hiddenKodeBarang, titleresep;
+    String kodeBarang, namaBarang, jumlahBarang, detail, title, category, duration, ingredients;
+    TextView hiddenKodeBarang, titleresep, categoryresep, durationresep, ingredientsresep;
     InterfaceConnection interfaceConnection;
 
     @Override
@@ -48,6 +48,10 @@ public class UpdateDataBarangFragement extends Fragment {
         layoutUpdatedetail = (TextInputLayout)view.findViewById(R.id.layoutUpdatedetail);
         hiddenKodeBarang = (TextView)view.findViewById(R.id.hiddenkodeBarang);
         titleresep = (TextView)view.findViewById(R.id.title_resep);
+        categoryresep = (TextView)view.findViewById(R.id.category_resep);
+        durationresep = (TextView)view.findViewById(R.id.duration_resep);
+        ingredientsresep = (TextView)view.findViewById(R.id.ingredient_resep);
+
         btnUpdateBarang = (Button)view.findViewById(R.id.btnUpdateBarang);
 
         try {
@@ -57,6 +61,11 @@ public class UpdateDataBarangFragement extends Fragment {
             jumlahBarang = bundle.getString("jmlBarang");
             detail = bundle.getString("detail");
             title = bundle.getString("title");
+            category = bundle.getString("category");
+            duration = bundle.getString("duration");
+            ingredients = bundle.getString("ingredient");
+
+
         }
         catch(final Exception e){
             // Do nothing
@@ -66,6 +75,10 @@ public class UpdateDataBarangFragement extends Fragment {
         updateJumlahBarang.setText(jumlahBarang);
         updatedetail.setText(detail);
         titleresep.setText(title);
+        categoryresep.setText(category);
+        durationresep.setText(duration);
+        ingredientsresep.setText(ingredients);
+
 
         btnUpdateBarang.setOnClickListener(new View.OnClickListener() {
             @Override

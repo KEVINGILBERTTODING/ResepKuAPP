@@ -60,8 +60,9 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
         holder.titleResep.setText(daftarBarang.get(position).getTitle_resep());
         holder.namaBarang.setText(daftarBarang.get(position).getNama_barang());
         holder.durationResep.setText(daftarBarang.get(position).getDuration_resep());
-
         holder.jumlahBarang.setText(daftarBarang.get(position).getJumlah_barang());
+
+
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,6 +79,9 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
                 String jumlah = daftarBarang.get(position).getJumlah_barang();
                 String detail = daftarBarang.get(position).getDetail_resep();
                 String title = daftarBarang.get(position).getTitle_resep();
+                String category = daftarBarang.get(position).getNama_barang();
+                String duration = daftarBarang.get(position).getDuration_resep();
+
                 Bundle bundle = new Bundle();
 //                bundle.putString("key", "data");
                 bundle.putString("kdBarang", kode);
@@ -85,6 +89,10 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
                 bundle.putString("jmlBarang", jumlah);
                 bundle.putString("detail", detail);
                 bundle.putString("title", title);
+                bundle.putString("category", category);
+                bundle.putString("duration", duration);
+                bundle.putString("ingredient", jumlah);
+
 
                 Fragment fragment = new com.example.resepku.UpdateDataBarangFragement();
                 fragment.setArguments(bundle);
@@ -109,7 +117,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         ConstraintLayout layout_daftar_barang;
-        TextView kodeBarang, namaBarang, jumlahBarang, titleResep, durationResep;
+        TextView kodeBarang, namaBarang, jumlahBarang, titleResep, durationResep, detailBarang;
         ImageButton btnDelete, btnEdit;
 
         public ViewHolder(@NonNull View itemView) {
