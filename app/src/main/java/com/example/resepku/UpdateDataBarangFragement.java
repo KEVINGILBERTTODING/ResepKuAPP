@@ -28,19 +28,19 @@ import retrofit2.Response;
 
 public class UpdateDataBarangFragement extends Fragment {
 
-    TextInputEditText updateNamaBarang, updateJumlahBarang, updatedetail;
+    TextInputEditText updateNamaBarang, updateJumlahBarang;
     TextInputLayout layoutUpdateNamaBarang, layoutUpdateJumlahBarang, layoutUpdatedetail;
 
     Button btnUpdateBarang;
-    String kodeBarang, namaBarang, jumlahBarang, detail, title, category, duration, ingredients;
-    TextView hiddenKodeBarang, titleresep, categoryresep, durationresep, ingredientsresep;
+    String kodeBarang, namaBarang, jumlahBarang, detail, title, category, duration, ingredients, details;
+    TextView hiddenKodeBarang, titleresep, categoryresep, durationresep, ingredientsresep, detailresep;
     InterfaceConnection interfaceConnection;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         interfaceConnection = ApiConnection.getClient().create(InterfaceConnection.class);
-         updatedetail= (TextInputEditText)view.findViewById(R.id.updatedetail);
+
         updateNamaBarang = (TextInputEditText)view.findViewById(R.id.updateNamaBarang);
         updateJumlahBarang = (TextInputEditText)view.findViewById(R.id.updateJumlahBarang);
         layoutUpdateNamaBarang = (TextInputLayout)view.findViewById(R.id.layoutUpdateNamaBarang);
@@ -51,6 +51,7 @@ public class UpdateDataBarangFragement extends Fragment {
         categoryresep = (TextView)view.findViewById(R.id.category_resep);
         durationresep = (TextView)view.findViewById(R.id.duration_resep);
         ingredientsresep = (TextView)view.findViewById(R.id.ingredient_resep);
+        detailresep = (TextView)view.findViewById(R.id.detail_resep);
 
         btnUpdateBarang = (Button)view.findViewById(R.id.btnUpdateBarang);
 
@@ -73,13 +74,11 @@ public class UpdateDataBarangFragement extends Fragment {
 
         updateNamaBarang.setText(namaBarang);
         updateJumlahBarang.setText(jumlahBarang);
-        updatedetail.setText(detail);
+        detailresep.setText(detail);
         titleresep.setText(title);
         categoryresep.setText(category);
         durationresep.setText(duration);
         ingredientsresep.setText(ingredients);
-
-
         btnUpdateBarang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -117,7 +117,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         ConstraintLayout layout_daftar_barang;
-        TextView kodeBarang, namaBarang, jumlahBarang, titleResep, durationResep, detailBarang;
+        TextView kodeBarang, namaBarang, jumlahBarang, titleResep, durationResep, detailResep;
         ImageButton btnDelete, btnEdit;
 
         public ViewHolder(@NonNull View itemView) {
@@ -128,6 +128,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
             titleResep = (TextView) itemView.findViewById(R.id.textViewtitle) ;
             jumlahBarang = (TextView)itemView.findViewById(R.id.textViewJumlahBarang);
             durationResep = (TextView)itemView.findViewById(R.id.textviewduration);
+            detailResep = (TextView)itemView.findViewById(R.id.detail_resep);
             btnDelete = (ImageButton)itemView.findViewById(R.id.imgBtnDeleteBarang);
             btnEdit = (ImageButton)itemView.findViewById(R.id.imgBtnEditBarang);
         }

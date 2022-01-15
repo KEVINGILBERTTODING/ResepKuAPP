@@ -163,13 +163,12 @@
                 android:id="@+id/detail_resep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/ingredient_resep"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/sfbold"
                 android:text="Detail"
-                android:textSize="19sp"
-                android:layout_below="@id/ingredient_resep"
                 android:textColor="@color/black"
-                android:layout_marginTop="20dp"
-                />
+                android:textSize="19sp" />
 
 
 
