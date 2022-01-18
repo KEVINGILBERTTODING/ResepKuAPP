@@ -26,7 +26,7 @@
         android:text="ResepKu"
         android:layout_marginTop="10dp"
         android:textSize="24sp"
-        android:fontFamily="@font/gogabold"
+        android:fontFamily="@font/sfbold"
         android:textColor="@color/white"
         android:layout_gravity="center"
 
@@ -39,8 +39,8 @@
         android:text="No one is conceived an awesome cook,"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:textSize="9sp"
-        android:fontFamily="@font/gogareg"
+        android:textSize="11sp"
+        android:fontFamily="@font/sfmed"
 
         />
 
@@ -50,8 +50,8 @@
         android:layout_height="wrap_content"
         android:text="one learns by doing."
         android:textColor="@color/white"
-        android:textSize="9sp"
-        android:fontFamily="@font/gogareg"
+        android:textSize="11sp"
+        android:fontFamily="@font/sfmed"
         android:layout_gravity="center_horizontal"
         />
     <TextView
@@ -61,8 +61,8 @@
         android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="300dp"
-        android:textSize="9sp"
-        android:fontFamily="@font/gogareg"
+        android:textSize="10sp"
+        android:fontFamily="@font/sfmed"
 
         />
 
@@ -70,14 +70,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
-        android:text="Version 1.1.1"
+        android:text="Version 1.1"
         android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/gogareg"
-        android:textSize="8sp"
+        android:fontFamily="@font/sfreg"
+        android:textSize="9sp"
         />
-
-
 
 
 </LinearLayout>

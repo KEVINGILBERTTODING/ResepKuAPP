@@ -78,7 +78,16 @@
 
 
 
-        <TextView
+            <ImageView
+                android:id="@+id/picture_resep"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_below="@id/textViewNamaBarang"
+
+                />
+
+
+            <TextView
             android:visibility="gone"
             android:id="@+id/textViewJumlahBarang"
             android:layout_width="wrap_content"

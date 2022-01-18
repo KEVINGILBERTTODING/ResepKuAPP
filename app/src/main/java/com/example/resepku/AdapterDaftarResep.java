@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.resepku.Response.Data_Response;
 import com.example.resepku.model.Data_Model;
 import com.example.resepku.rest.ApiConnection;
@@ -24,7 +26,6 @@ import com.example.resepku.rest.InterfaceConnection;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -33,15 +34,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBarang.ViewHolder> {
+public class AdapterDaftarResep extends RecyclerView.Adapter<AdapterDaftarResep.ViewHolder> {
 
-    com.example.resepku.UpdateDataBarangFragement updateDataBarangFragement;
+    ShowResep showResep;
     InterfaceConnection interfaceConnection;
     ArrayList<Data_Model> daftarBarang;
     Context mContext;
     String id;
 
-    public AdapterDaftarBarang(Context context){
+    public AdapterDaftarResep(Context context){
         daftarBarang = new ArrayList<>();
         mContext = context;
     }
@@ -49,7 +50,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_daftar_barang, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_daftar_resep, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -61,6 +62,9 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
         holder.namaBarang.setText(daftarBarang.get(position).getNama_barang());
         holder.durationResep.setText(daftarBarang.get(position).getDuration_resep());
         holder.jumlahBarang.setText(daftarBarang.get(position).getJumlah_barang());
+
+        Glide.with(mContext).load("http://192.168.11.19/myresep/public/api/" + daftarBarang.get(position).getPicture_resep()).
+                into(holder.picture_Resep);
 
 
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +86,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
                 String category = daftarBarang.get(position).getNama_barang();
                 String duration = daftarBarang.get(position).getDuration_resep();
 
+
                 Bundle bundle = new Bundle();
 //                bundle.putString("key", "data");
                 bundle.putString("kdBarang", kode);
@@ -94,7 +99,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
                 bundle.putString("ingredient", jumlah);
 
 
-                Fragment fragment = new com.example.resepku.UpdateDataBarangFragement();
+                Fragment fragment = new ShowResep();
                 fragment.setArguments(bundle);
                 FragmentManager fragmentManager = ((MainActivity)mContext).getSupportFragmentManager();
                   fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
@@ -119,6 +124,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
         ConstraintLayout layout_daftar_barang;
         TextView kodeBarang, namaBarang, jumlahBarang, titleResep, durationResep, detailResep;
         ImageButton btnDelete, btnEdit;
+        ImageView picture_Resep;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -129,6 +135,7 @@ public class AdapterDaftarBarang extends RecyclerView.Adapter<AdapterDaftarBaran
             jumlahBarang = (TextView)itemView.findViewById(R.id.textViewJumlahBarang);
             durationResep = (TextView)itemView.findViewById(R.id.textviewduration);
             detailResep = (TextView)itemView.findViewById(R.id.detail_resep);
+            picture_Resep = itemView.findViewById(R.id.picture_resep);
             btnDelete = (ImageButton)itemView.findViewById(R.id.imgBtnDeleteBarang);
             btnEdit = (ImageButton)itemView.findViewById(R.id.imgBtnEditBarang);
         }

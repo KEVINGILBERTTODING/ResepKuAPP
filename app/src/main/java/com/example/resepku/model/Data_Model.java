@@ -17,6 +17,9 @@ public class Data_Model {
     private String jumlah_barang;
     @SerializedName("detail")
     private String detail_resep;
+    @SerializedName("picture")
+    private String picture_resep;
+
 
     public String getKode_barang() {
         return kode_barang;
@@ -63,5 +66,13 @@ public class Data_Model {
 
     public void setDetail_resep(String detail_resep) {
         this.detail_resep = detail_resep;
+    }
+
+    public String getPicture_resep() {
+        return picture_resep;
+    }
+
+    public void setPicture_resep(String picture_resep) {
+        this.picture_resep = picture_resep;
     }
 }

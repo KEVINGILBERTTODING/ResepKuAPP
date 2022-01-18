@@ -14,6 +14,6 @@ public class UpdateBarangFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_update_barang, container, false);
+        return inflater.inflate(R.layout.fragment_update_resep, container, false);
     }
 }

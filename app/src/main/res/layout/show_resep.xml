@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/backgroundshow"
+
+    android:layout_height="match_parent">
+
+
+    //real layout
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <ImageButton
+            android:id="@+id/btn_back1"
+            android:layout_width="25dp"
+            android:layout_height="28dp"
+            android:layout_alignParentLeft="true"
+
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_back" />
+
+        <ImageButton
+            android:id="@+id/btn_save"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/saveicon" />
+
+
+        <ImageView
+            android:id="@+id/foodIcon"
+            android:layout_width="270dp"
+            android:layout_height="240dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+
+            android:src="@drawable/foodlogo2" />
+
+
+        <TextView
+
+            android:id="@+id/title_resep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/foodIcon"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/sfbold"
+            android:text="Resep makanan"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+
+            android:id="@+id/category_resep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_resep"
+            android:fontFamily="@font/sfmed"
+            android:text="Category"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+        <ImageView
+            android:id="@+id/TimeIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/foodIcon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="-20dp"
+            android:layout_marginRight="35dp"
+            android:src="@drawable/timeicon"
+
+            />
+
+        <TextView
+
+            android:id="@+id/duration_resep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TimeIcon"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:fontFamily="@font/sfmed"
+            android:text="120"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginTop="400dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+
+                android:id="@+id/tvIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfbold"
+                android:text="Ingredient :"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+
+            <TextView
+
+                android:id="@+id/ingredient_resep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvIngredients"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sfmed"
+                android:text="Ingredient"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+            <TextView
+
+                android:id="@+id/tvHowToMake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ingredient_resep"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/sfbold"
+                android:text="How To Make :"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <TextView
+
+                android:id="@+id/detail_resep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvHowToMake"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/sfmed"
+                android:text="Detail"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/hiddenkodeBarang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutUpdateNamaBarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+
+            android:visibility="gone"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateNamaBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Barang"
+                android:visibility="gone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutUpdateJumlahBarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:enabled="false"
+            android:visibility="gone"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updateJumlahBarang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingredients"
+                android:visibility="gone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layouthowtomake"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/howtomake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingredients"
+                android:visibility="gone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutUpdatedetail"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/updatedetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingredients"
+                android:visibility="gone" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btnUpdateBarang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:textColor="#fff"
+
+            android:textSize="20dp"
+            android:textAllCaps="false"
+            android:layout_marginTop="450dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="12dp"/>
+
+
+
+</RelativeLayout>

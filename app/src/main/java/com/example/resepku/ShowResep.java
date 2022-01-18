@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,15 +27,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UpdateDataBarangFragement extends Fragment {
+public class ShowResep extends Fragment {
 
     TextInputEditText updateNamaBarang, updateJumlahBarang;
     TextInputLayout layoutUpdateNamaBarang, layoutUpdateJumlahBarang, layoutUpdatedetail;
+
+    ImageButton btnback1;
 
     Button btnUpdateBarang;
     String kodeBarang, namaBarang, jumlahBarang, detail, title, category, duration, ingredients, details;
     TextView hiddenKodeBarang, titleresep, categoryresep, durationresep, ingredientsresep, detailresep;
     InterfaceConnection interfaceConnection;
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -54,6 +58,11 @@ public class UpdateDataBarangFragement extends Fragment {
         detailresep = (TextView)view.findViewById(R.id.detail_resep);
 
         btnUpdateBarang = (Button)view.findViewById(R.id.btnUpdateBarang);
+        btnback1 = (ImageButton)view.findViewById(R.id.btn_back1);
+
+
+
+
 
         try {
             final Bundle bundle = getArguments();
@@ -120,11 +129,14 @@ public class UpdateDataBarangFragement extends Fragment {
         });
     }
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_update_data_barang, container, false);
+        return inflater.inflate(R.layout.show_resep, container, false);
     }
+
+
 
 
 }

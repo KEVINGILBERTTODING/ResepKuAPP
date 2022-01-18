@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import com.example.resepku.Response.Data_Response;
 import com.example.resepku.rest.ApiConnection;
 import com.example.resepku.rest.InterfaceConnection;
-import com.example.resepku.rest.InterfaceConnection;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -91,7 +90,7 @@ public class AddBarangFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_add_barang, container, false);
+        return inflater.inflate(R.layout.fragment_add_resep, container, false);
     }
 
 }

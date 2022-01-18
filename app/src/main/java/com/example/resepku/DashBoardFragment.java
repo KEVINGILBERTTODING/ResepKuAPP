@@ -1,15 +1,13 @@
 package com.example.resepku;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import android.content.Intent;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -35,7 +33,7 @@ public class DashBoardFragment extends Fragment {
     ArrayList<Data_Model> daftarseluruhBarang = new ArrayList<>();
     RecyclerView tabel_barang;
     InterfaceConnection interfaceConnection;
-    AdapterDaftarBarang adapterDaftarBarang;
+    AdapterDaftarResep adapterDaftarResep;
 
 
 
@@ -54,7 +52,7 @@ public class DashBoardFragment extends Fragment {
 
 
     private void loadDataBarang() {
-        adapterDaftarBarang = new AdapterDaftarBarang(getContext());
+        adapterDaftarResep = new AdapterDaftarResep(getContext());
         Call<Data_Response> daftar_barang = interfaceConnection.daftar_barang();
         daftar_barang.enqueue(new Callback<Data_Response>() {
             @Override
@@ -70,7 +68,7 @@ public class DashBoardFragment extends Fragment {
                         Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
-                adapterDaftarBarang.updatedatabarang(daftarseluruhBarang);
+                adapterDaftarResep.updatedatabarang(daftarseluruhBarang);
             }
             @Override
             public void onFailure(Call<Data_Response> call, Throwable t) {
@@ -88,7 +86,7 @@ public class DashBoardFragment extends Fragment {
     }
 
     private void startRecyclerView() {
-        tabel_barang.setAdapter(adapterDaftarBarang);
+        tabel_barang.setAdapter(adapterDaftarResep);
         tabel_barang.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 
