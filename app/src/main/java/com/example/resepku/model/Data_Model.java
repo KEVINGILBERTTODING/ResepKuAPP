@@ -5,16 +5,16 @@ import com.google.gson.annotations.SerializedName;
 public class Data_Model {
 
     @SerializedName("id")
-    private String kode_barang;
+    private String kode_resep;
 
     @SerializedName("title")
     private String title_resep;
     @SerializedName("duration")
     private String duration_resep;
     @SerializedName("category")
-    private String nama_barang;
+    private String nama_category;
     @SerializedName("ingredient")
-    private String jumlah_barang;
+    private String ingredients;
     @SerializedName("detail")
     private String detail_resep;
     @SerializedName("picture")
@@ -22,11 +22,11 @@ public class Data_Model {
 
 
     public String getKode_barang() {
-        return kode_barang;
+        return kode_resep;
     }
 
-    public void setKode_barang(String kode_barang) {
-        this.kode_barang = kode_barang;
+    public void setKode_resep(String kode_resep) {
+        this.kode_resep = kode_resep;
     }
 
     public String getTitle_resep() {
@@ -44,20 +44,20 @@ public class Data_Model {
         this.duration_resep = duration_resep;
     }
 
-    public String getNama_barang() {
-        return nama_barang;
+    public String getNama_category() {
+        return nama_category;
     }
 
-    public void setNama_barang(String nama_barang) {
-        this.nama_barang = nama_barang;
+    public void setNama_category(String nama_category) {
+        this.nama_category = nama_category;
     }
 
-    public String getJumlah_barang() {
-        return jumlah_barang;
+    public String getIngredients() {
+        return ingredients;
     }
 
-    public void setJumlah_barang(String jumlah_barang) {
-        this.jumlah_barang = jumlah_barang;
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 
     public String getDetail_resep() {

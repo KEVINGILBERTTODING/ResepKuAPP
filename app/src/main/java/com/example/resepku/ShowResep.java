@@ -29,13 +29,11 @@ import retrofit2.Response;
 
 public class ShowResep extends Fragment {
 
-    TextInputEditText updateNamaBarang, updateJumlahBarang;
-    TextInputLayout layoutUpdateNamaBarang, layoutUpdateJumlahBarang, layoutUpdatedetail;
 
     ImageButton btnback1;
 
-    Button btnUpdateBarang;
-    String kodeBarang, namaBarang, jumlahBarang, detail, title, category, duration, ingredients, details;
+    Button btnUpdateResep;
+    String  detail, title, category, duration, ingredients, details;
     TextView hiddenKodeBarang, titleresep, categoryresep, durationresep, ingredientsresep, detailresep;
     InterfaceConnection interfaceConnection;
 
@@ -44,12 +42,6 @@ public class ShowResep extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         interfaceConnection = ApiConnection.getClient().create(InterfaceConnection.class);
-
-        updateNamaBarang = (TextInputEditText)view.findViewById(R.id.updateNamaBarang);
-        updateJumlahBarang = (TextInputEditText)view.findViewById(R.id.updateJumlahBarang);
-        layoutUpdateNamaBarang = (TextInputLayout)view.findViewById(R.id.layoutUpdateNamaBarang);
-        layoutUpdateJumlahBarang = (TextInputLayout)view.findViewById(R.id.layoutUpdateJumlahBarang);
-        layoutUpdatedetail = (TextInputLayout)view.findViewById(R.id.layoutUpdatedetail);
         hiddenKodeBarang = (TextView)view.findViewById(R.id.hiddenkodeBarang);
         titleresep = (TextView)view.findViewById(R.id.title_resep);
         categoryresep = (TextView)view.findViewById(R.id.category_resep);
@@ -57,18 +49,14 @@ public class ShowResep extends Fragment {
         ingredientsresep = (TextView)view.findViewById(R.id.ingredient_resep);
         detailresep = (TextView)view.findViewById(R.id.detail_resep);
 
-        btnUpdateBarang = (Button)view.findViewById(R.id.btnUpdateBarang);
+        btnUpdateResep = (Button)view.findViewById(R.id.btnUpdateBarang);
         btnback1 = (ImageButton)view.findViewById(R.id.btn_back1);
-
-
 
 
 
         try {
             final Bundle bundle = getArguments();
-            kodeBarang = bundle.getString("kdBarang");
-            namaBarang = bundle.getString("nmBarang");
-            jumlahBarang = bundle.getString("jmlBarang");
+
             detail = bundle.getString("detail");
             title = bundle.getString("title");
             category = bundle.getString("category");
@@ -81,53 +69,20 @@ public class ShowResep extends Fragment {
             // Do nothing
         }
 
-        updateNamaBarang.setText(namaBarang);
-        updateJumlahBarang.setText(jumlahBarang);
+
         detailresep.setText(detail);
         titleresep.setText(title);
         categoryresep.setText(category);
         durationresep.setText(duration);
         ingredientsresep.setText(ingredients);
-        btnUpdateBarang.setOnClickListener(new View.OnClickListener() {
+        btnUpdateResep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateBarang();
+
             }
         });
     }
 
-    private void updateBarang() {
-//        Toast.makeText(getContext(), namaBarang, Toast.LENGTH_SHORT).show();
-        String getNewNamaBarang = updateNamaBarang.getText().toString();
-        String getNewJumlahaBarang = updateJumlahBarang.getText().toString();
-        Data_Model dataModel = new Data_Model();
-        dataModel.setNama_barang(getNewJumlahaBarang);
-        dataModel.setJumlah_barang(getNewNamaBarang);
-        Call<Data_Response> update_data_barang = interfaceConnection.update_barang(kodeBarang, getNewNamaBarang, getNewJumlahaBarang);
-        Log.d("Kode Barang", kodeBarang);
-        Log.d("Nama Barang", kodeBarang);
-        Log.d("Jumlah Barang", kodeBarang);
-        update_data_barang.enqueue(new Callback<Data_Response>() {
-            @Override
-            public void onResponse(Call<Data_Response> call, Response<Data_Response> response) {
-                if (response.isSuccessful()){
-                    Toast.makeText(getActivity(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
-                } else {
-                    try {
-                        JSONObject jObjError = new JSONObject(response.errorBody().string());
-                        Toast.makeText(getActivity(), jObjError.getString("message"), Toast.LENGTH_LONG).show();
-                    } catch (Exception e) {
-                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Data_Response> call, Throwable t) {
-                Toast.makeText(getActivity(), "Terjadi kesalahan", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
 
     @Nullable

@@ -1,9 +1,7 @@
 package com.example.resepku;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -50,12 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 case  R.id.dashboard:
                     selected = new com.example.resepku.DashBoardFragment();
                     break;
-                case  R.id.tambah_Barang:
-                    selected = new com.example.resepku.AddBarangFragment();
-                    break;
-
+               
                 case  R.id.edit_Barang:
-                    selected = new UpdateBarangFragment();
+                    selected = new UpdateResepFragment();
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

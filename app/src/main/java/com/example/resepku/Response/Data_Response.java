@@ -11,7 +11,7 @@ public class Data_Response {
     private String message;
 
     @SerializedName("data")
-    List<Data_Model> seluruh_barang;
+    List<Data_Model> seluruh_resep;
 
     public Boolean getStatus() {
         return status;
@@ -29,11 +29,11 @@ public class Data_Response {
         this.message = message;
     }
 
-    public List<Data_Model> getSeluruh_barang() {
-        return seluruh_barang;
+    public List<Data_Model> getSeluruh_resep() {
+        return seluruh_resep;
     }
 
-    public void setSeluruh_barang(List<Data_Model> seluruh_barang) {
-        this.seluruh_barang = seluruh_barang;
+    public void setSeluruh_resep(List<Data_Model> seluruh_resep) {
+        this.seluruh_resep = seluruh_resep;
     }
 }

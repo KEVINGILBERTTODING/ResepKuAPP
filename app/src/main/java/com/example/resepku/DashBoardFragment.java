@@ -30,12 +30,10 @@ import retrofit2.Response;
 
 public class DashBoardFragment extends Fragment {
     ImageButton btnBack;
-    ArrayList<Data_Model> daftarseluruhBarang = new ArrayList<>();
+    ArrayList<Data_Model> daftarseluruhResep = new ArrayList<>();
     RecyclerView tabel_barang;
     InterfaceConnection interfaceConnection;
     AdapterDaftarResep adapterDaftarResep;
-
-
 
 
 
@@ -44,22 +42,22 @@ public class DashBoardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         tabel_barang = (RecyclerView)view.findViewById(R.id.recyclerView_daftarBarang);
         interfaceConnection = ApiConnection.getClient().create(InterfaceConnection.class);
-        loadDataBarang();
+        loadDataResep();
 
 
 
     }
 
 
-    private void loadDataBarang() {
+    private void loadDataResep() {
         adapterDaftarResep = new AdapterDaftarResep(getContext());
-        Call<Data_Response> daftar_barang = interfaceConnection.daftar_barang();
+        Call<Data_Response> daftar_barang = interfaceConnection.daftar_resep();
         daftar_barang.enqueue(new Callback<Data_Response>() {
             @Override
             public void onResponse(Call<Data_Response> call, Response<Data_Response> response) {
                 if (response.isSuccessful()){
-                    List<Data_Model> seluruh_barang = response.body().getSeluruh_barang();
-                    daftarseluruhBarang.addAll(seluruh_barang);
+                    List<Data_Model> seluruh_barang = response.body().getSeluruh_resep();
+                    daftarseluruhResep.addAll(seluruh_barang);
                 } else {
                     try {
                         JSONObject jObjError = new JSONObject(response.errorBody().string());
@@ -68,7 +66,7 @@ public class DashBoardFragment extends Fragment {
                         Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
-                adapterDaftarResep.updatedatabarang(daftarseluruhBarang);
+                adapterDaftarResep.updatedatabarang(daftarseluruhResep);
             }
             @Override
             public void onFailure(Call<Data_Response> call, Throwable t) {
