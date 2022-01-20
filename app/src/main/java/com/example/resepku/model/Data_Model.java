@@ -20,6 +20,9 @@ public class Data_Model {
     @SerializedName("picture")
     private String picture_resep;
 
+    @SerializedName("image")
+    private String image_resep;
+
 
     public String getKode_barang() {
         return kode_resep;
@@ -74,5 +77,13 @@ public class Data_Model {
 
     public void setPicture_resep(String picture_resep) {
         this.picture_resep = picture_resep;
+    }
+
+    public String getImage_resep() {
+        return image_resep;
+    }
+
+    public void setImage_resep(String image_resep) {
+        this.image_resep = image_resep;
     }
 }

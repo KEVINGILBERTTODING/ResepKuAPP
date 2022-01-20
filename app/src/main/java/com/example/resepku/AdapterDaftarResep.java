@@ -51,8 +51,9 @@ public class AdapterDaftarResep extends RecyclerView.Adapter<AdapterDaftarResep.
         holder.durationResep.setText(daftarBarang.get(position).getDuration_resep());
         holder.jumlahBarang.setText(daftarBarang.get(position).getIngredients());
 
-        Glide.with(mContext).load("http://192.168.11.19/myresep/public/api/" + daftarBarang.get(position).getPicture_resep()).
-                into(holder.picture_Resep);
+        Glide.with(mContext)
+                .load(daftarBarang.get(position).getImage_resep())
+                .into(holder.picture_Resep);
 
 
 

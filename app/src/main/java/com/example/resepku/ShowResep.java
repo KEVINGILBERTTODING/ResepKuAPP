@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,9 +34,10 @@ public class ShowResep extends Fragment {
     ImageButton btnback1;
 
     Button btnUpdateResep;
-    String  detail, title, category, duration, ingredients, details;
+    String  detail, title, category, duration, ingredients;
     TextView hiddenKodeBarang, titleresep, categoryresep, durationresep, ingredientsresep, detailresep;
     InterfaceConnection interfaceConnection;
+
 
 
     @Override
@@ -48,7 +50,6 @@ public class ShowResep extends Fragment {
         durationresep = (TextView)view.findViewById(R.id.duration_resep);
         ingredientsresep = (TextView)view.findViewById(R.id.ingredient_resep);
         detailresep = (TextView)view.findViewById(R.id.detail_resep);
-
         btnUpdateResep = (Button)view.findViewById(R.id.btnUpdateBarang);
         btnback1 = (ImageButton)view.findViewById(R.id.btn_back1);
 
@@ -62,6 +63,7 @@ public class ShowResep extends Fragment {
             category = bundle.getString("category");
             duration = bundle.getString("duration");
             ingredients = bundle.getString("ingredient");
+
 
 
         }
