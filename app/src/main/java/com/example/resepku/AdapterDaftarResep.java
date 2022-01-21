@@ -51,9 +51,17 @@ public class AdapterDaftarResep extends RecyclerView.Adapter<AdapterDaftarResep.
         holder.durationResep.setText(daftarBarang.get(position).getDuration_resep());
         holder.jumlahBarang.setText(daftarBarang.get(position).getIngredients());
 
+
+        // Menggunakan library glide
+
         Glide.with(mContext)
-                .load(daftarBarang.get(position).getImage_resep())
-                .into(holder.picture_Resep);
+             .load("http://192.168.11.19/myresep/storage/app/pictures/"+daftarBarang.get(position).getPicture_resep())
+           .into(holder.picture_Resep);
+
+
+//        Glide.with(mContext)
+//                .load(daftarBarang.get(position).getImage_resep())
+//                .into(holder.picture_Resep);
 
 
 
@@ -70,6 +78,7 @@ public class AdapterDaftarResep extends RecyclerView.Adapter<AdapterDaftarResep.
                 String duration = daftarBarang.get(position).getDuration_resep();
 
 
+
                 Bundle bundle = new Bundle();
 //                bundle.putString("key", "data");
                 bundle.putString("kdBarang", kode);
@@ -80,6 +89,7 @@ public class AdapterDaftarResep extends RecyclerView.Adapter<AdapterDaftarResep.
                 bundle.putString("category", category);
                 bundle.putString("duration", duration);
                 bundle.putString("ingredient", jumlah);
+
 
 
                 Fragment fragment = new ShowResep();

@@ -8,7 +8,7 @@ public class ApiConnection {
 
     //link api
 
-    public static final String BASE_URL = "http://172.20.10.3/myresep/public/api/";
+    public static final String BASE_URL = "http://192.168.11.19/myresep/public/api/";
     private static Retrofit retrofit = null;
     public static Retrofit getClient() {
         if (retrofit==null) {
