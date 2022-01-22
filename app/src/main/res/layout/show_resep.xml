@@ -98,13 +98,14 @@
             android:textSize="15sp" />
 
 
-    </RelativeLayout>
+
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbars="none"
-        android:layout_marginTop="400dp"
+
+        android:layout_below="@+id/category_resep"
         >
 
         <RelativeLayout
@@ -270,4 +271,5 @@
 
 
 
+</RelativeLayout>
 </RelativeLayout>

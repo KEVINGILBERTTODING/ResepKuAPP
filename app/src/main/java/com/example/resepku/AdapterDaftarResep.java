@@ -55,7 +55,7 @@ public class AdapterDaftarResep extends RecyclerView.Adapter<AdapterDaftarResep.
         // Menggunakan library glide
 
         Glide.with(mContext)
-             .load("http://192.168.11.19/myresep/storage/app/pictures/"+daftarBarang.get(position).getPicture_resep())
+             .load("http://172.20.10.3/myresep/storage/app/pictures/"+daftarBarang.get(position).getPicture_resep())
            .into(holder.picture_Resep);
 
 

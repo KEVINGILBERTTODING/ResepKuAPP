@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.resepku.Response.Data_Response;
 import com.example.resepku.model.Data_Model;
 import com.example.resepku.rest.ApiConnection;
@@ -34,9 +35,10 @@ public class ShowResep extends Fragment {
     ImageButton btnback1;
 
     Button btnUpdateResep;
-    String  detail, title, category, duration, ingredients;
+    String  detail, title, category, duration, ingredients, picture;
     TextView hiddenKodeBarang, titleresep, categoryresep, durationresep, ingredientsresep, detailresep;
     InterfaceConnection interfaceConnection;
+    ImageView pictureResep;
 
 
 
@@ -52,6 +54,7 @@ public class ShowResep extends Fragment {
         detailresep = (TextView)view.findViewById(R.id.detail_resep);
         btnUpdateResep = (Button)view.findViewById(R.id.btnUpdateBarang);
         btnback1 = (ImageButton)view.findViewById(R.id.btn_back1);
+        pictureResep = (ImageView) view.findViewById(R.id.foodIcon);
 
 
 
@@ -63,6 +66,8 @@ public class ShowResep extends Fragment {
             category = bundle.getString("category");
             duration = bundle.getString("duration");
             ingredients = bundle.getString("ingredient");
+            picture = bundle.getString("picture");
+
 
 
 
@@ -77,6 +82,10 @@ public class ShowResep extends Fragment {
         categoryresep.setText(category);
         durationresep.setText(duration);
         ingredientsresep.setText(ingredients);
+
+
+
+
         btnUpdateResep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
